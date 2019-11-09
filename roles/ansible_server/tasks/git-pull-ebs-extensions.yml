@@ -1,0 +1,12 @@
+---
+# file: roles/ansible_server/tasks/apt-pull-ebs-extensions.yml
+- name: Pull the AWS Elastic Beanstalk Extensions from GitHub
+  become: false  
+  git:
+    repo: "{{ git_repository.beanstalk_url }}"
+    dest: "{{ source_paths.aws_elastic_beanstalk }}"
+    clone: yes
+  tags:
+  - establish
+  - capture
+  - update

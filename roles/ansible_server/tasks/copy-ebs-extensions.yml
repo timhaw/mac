@@ -1,0 +1,11 @@
+---
+# file: roles/ansible_server/tasks/copy-ebs-extensions.yml
+- name: Copy the AWS EBS extensions into the modules library
+  become: true  
+  copy:
+    src: "{{ source_paths.aws_elastic_beanstalk_library }}/"
+    dest: "{{ source_paths.ansible_amazon_modules }}/"
+  tags:
+  - establish
+  - capture
+  - update

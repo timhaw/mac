@@ -1,0 +1,6 @@
+---
+# file: local.yml
+- hosts: localhost
+  roles:
+    - ansible_server
+  become: true

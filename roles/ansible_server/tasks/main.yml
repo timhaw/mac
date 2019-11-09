@@ -1,0 +1,4 @@
+---
+# file: roles/ansible_install/tasks/main.yml
+- include: git-pull-ebs-extensions.yml
+- include: copy-ebs-extensions.yml
